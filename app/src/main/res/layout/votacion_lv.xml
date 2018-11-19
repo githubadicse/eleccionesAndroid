@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data class="ListViewVotos">
+        <variable
+            name="voto001"
+            type="elecciones.adicse.eleccionesmobil.model.Voto001"/>
+
+        <variable
+            name="posicion"
+            type="Integer"/>
+
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="91dp"
+            android:layout_height="85dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="8dp"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/imgCandidato"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:imageUrl="@{voto001.voto002s.get(posicion).plantilla002.candidato.foto}"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="159dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtNombreCandidato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{voto001.voto002s.get(posicion).plantilla002.candidato.nombre}"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtPartidoPolitico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{voto001.voto002s.get(posicion).plantilla002.candidato.agrupacion.dscagrupacion}"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="91dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+            tools:layout_editor_absoluteY="7dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/txtVotos"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@{voto001.voto002s.get(posicion).voto.toString()}"
+                android:textAlignment="center"
+                android:textSize="45sp" />
+        </LinearLayout>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="95dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
