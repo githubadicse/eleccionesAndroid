@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class UrlConnection {
 
-    static String urlConn = "http://200.37.150.115:8080";
+    static String urlConn = "http://192.168.24.113:8080/eleccion";
 
     static String token;
 
@@ -24,7 +24,7 @@ public class UrlConnection {
 
 
     public UrlConnection() {
-        //urlConn = "http://200.60.132.211:8080";
+        //urlConn = "http://192.168.24.113:8080";
     }
 
     public static String getUrlConn() {
